@@ -1,21 +1,30 @@
 ﻿using System;
 
-namespace Calculator
+namespace assignments1a
 {
     class Program
     {
-         public static void Main(string[] args)
+        static void Main(string[] args)
         {
-            Console.WriteLine("Enter first number :   ");  
-            int x = int.Parse(Console.ReadLine());
-            Console.WriteLine("Enter second number :   ");
-            int y = int.Parse(Console.ReadLine());
+            int[] a = new int[100]; //creating an array of size 100
+            int i, n, sum = 0;
+            Console.Write("Input the number of elements to be stored in the array :");  //number of elemnts in an array
+            n = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Addition of two numbers : {0}" , x + y);
-            Console.WriteLine("Subtraction of two numbers : {0}  " , x - y);
-            Console.WriteLine("Multiplication of two numbers : {0}   " , x * y);
-            Console.WriteLine("Division of two numbers :  {0} " , x / y);
+            Console.Write("Input {0} elements in the array :\n", n);
+            for (i = 0; i < n; i++)         //to print array sequence number & reading the array elements
+            {
+                Console.Write("element - {0} : ", i);
+                a[i] = Convert.ToInt32(Console.ReadLine());
+            }
 
+            for (i = 0; i < n; i++)     //adding the elements in the array
+            {
+                sum = sum + a[i];
+            }
+
+            Console.Write("Sum of all elements stored in the array is : {0}\n\n", sum);
         }
     }
 }
+
